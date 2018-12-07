@@ -13,7 +13,7 @@ resource "aws_sqs_queue" "my_sqs" {
 }
 
 module "sns_sqs" {
-  source     = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.0.1"
+  source     = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.0.2"
   topic_name = "${random_string.sqs_rstring.result}-my-example-topic"
 
   create_subscription_1 = true
