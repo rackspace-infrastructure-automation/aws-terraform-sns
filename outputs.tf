@@ -4,5 +4,6 @@ output "topic_id" {
 }
 
 output "topic_arn" {
-  value = "${aws_sns_topic.MySNSTopic.arn}"
+  value       = "${aws_sns_topic.MySNSTopic.arn}"
+  description = "The ARN of the SNS Topic"
 }
