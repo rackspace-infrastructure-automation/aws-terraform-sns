@@ -19,9 +19,10 @@ resource "aws_sqs_queue" "my_sqs" {
 
 module "sns_sqs" {
   source     = "../../module"
-  topic_name = "${random_string.sqs_rstring.result}-my-example-topic"
+
+  name = "${random_string.sqs_rstring.result}-my-example-topic"
 
   create_subscription_1 = true
-  protocol_1            = "sqs"
   endpoint_1            = aws_sqs_queue.my_sqs.arn
+  protocol_1            = "sqs"
 }

@@ -93,7 +93,7 @@ variable "protocol_5" {
   default     = ""
 }
 
-variable "topic_name" {
+variable "name" {
   description = "A name for the topic"
   type        = string
 }
