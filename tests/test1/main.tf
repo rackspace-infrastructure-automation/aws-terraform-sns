@@ -18,7 +18,7 @@ resource "aws_sqs_queue" "my_sqs" {
 }
 
 module "sns_sqs" {
-  source     = "../../module"
+  source = "../../module"
 
   name = "${random_string.sqs_rstring.result}-my-example-topic"
 
