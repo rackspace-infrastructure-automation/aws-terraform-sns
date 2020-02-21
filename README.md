@@ -6,9 +6,9 @@ This module sets up an SNS topic and adds up to 5 subscriptions.
 
 ```HCL
 module "sns" {
- source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.12.0"
+  source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.12.0"
 
- name = "my-example-topic"
+  name = "my-example-topic"
 
 }
 ```
@@ -41,6 +41,9 @@ The following module variables were updated to better meet current Rackspace sty
 
 - `topic_name` -> `name`
 
+### Limitations  
+This module does not support `email` or `email-json` as a protocol as  Terraform does not currently support them. See: https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html for more details.
+
 ## Providers
 
 | Name | Version |
@@ -61,6 +64,11 @@ The following module variables were updated to better meet current Rackspace sty
 | endpoint\_3 | The subscription's endpoint #3. | `string` | `""` | no |
 | endpoint\_4 | The subscription's endpoint #4. | `string` | `""` | no |
 | endpoint\_5 | The subscription's endpoint #5. | `string` | `""` | no |
+| endpoint\_auto\_confirms\_1 | Boolean indicating whether endpoint #1 is capable of auto confirming subscription (required for HTTP protocols). | `bool` | `false` | no |
+| endpoint\_auto\_confirms\_2 | Boolean indicating whether endpoint #2 is capable of auto confirming subscription (required for HTTP protocols). | `bool` | `false` | no |
+| endpoint\_auto\_confirms\_3 | Boolean indicating whether endpoint #3 is capable of auto confirming subscription (required for HTTP protocols). | `bool` | `false` | no |
+| endpoint\_auto\_confirms\_4 | Boolean indicating whether endpoint #4 is capable of auto confirming subscription (required for HTTP protocols). | `bool` | `false` | no |
+| endpoint\_auto\_confirms\_5 | Boolean indicating whether endpoint #5 is capable of auto confirming subscription (required for HTTP protocols). | `bool` | `false` | no |
 | name | A name for the topic | `string` | n/a | yes |
 | protocol\_1 | The protocol you want to use in your endpoint #1. Supported protocols include: http, https, sms, sqs, application, lambda. | `string` | `""` | no |
 | protocol\_2 | The protocol you want to use in your endpoint #2. Supported protocols include: http, https, sms, sqs, application, lambda. | `string` | `""` | no |
