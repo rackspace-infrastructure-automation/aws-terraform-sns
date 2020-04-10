@@ -48,7 +48,7 @@ This module does not support `email` or `email-json` as a protocol as  Terraform
 
 | Name | Version |
 |------|---------|
-| aws | >= 2.1.0 |
+| aws | >= 2.7.0 |
 
 ## Inputs
 
