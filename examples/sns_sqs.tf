@@ -3,7 +3,8 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region  = "us-west-2"
+  version = "~> 2.7"
 }
 
 resource "random_string" "sqs_rstring" {
