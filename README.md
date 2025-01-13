@@ -44,16 +44,34 @@ The following module variables were updated to better meet current Rackspace sty
 ### Limitations  
 This module does not support `email` or `email-json` as a protocol as  Terraform does not currently support them. See: https://www.terraform.io/docs/providers/aws/r/sns_topic_subscription.html for more details.
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+| aws | >= 4.0 |
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | >= 2.7.0 |
+| aws | >= 4.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_sns_topic](https://registry.terraform.io/providers/hashicorp/aws/4.0/docs/resources/sns_topic) |
+| [aws_sns_topic_subscription](https://registry.terraform.io/providers/hashicorp/aws/4.0/docs/resources/sns_topic_subscription) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | create\_subscription\_1 | Set to true to enable subscription. | `bool` | `false` | no |
 | create\_subscription\_2 | Set to true to enable subscription. | `bool` | `false` | no |
 | create\_subscription\_3 | Set to true to enable subscription. | `bool` | `false` | no |
@@ -82,4 +100,3 @@ This module does not support `email` or `email-json` as a protocol as  Terraform
 |------|-------------|
 | topic\_arn | The ARN of the SNS Topic |
 | topic\_id | The id of the SNS topic. |
-
