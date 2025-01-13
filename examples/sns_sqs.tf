@@ -1,10 +1,16 @@
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 0.13"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0"
+    }
+  }
 }
 
 provider "aws" {
-  region  = "us-west-2"
-  version = "~> 2.7"
+  region = "us-west-2"
 }
 
 resource "random_string" "sqs_rstring" {
@@ -18,7 +24,7 @@ resource "aws_sqs_queue" "my_sqs" {
 }
 
 module "sns_sqs" {
-  source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.12.1"
+  source = "git@github.com:rackspace-infrastructure-automation/aws-terraform-sns//?ref=v0.12.3"
 
   name = "${random_string.sqs_rstring.result}-my-example-topic"
 
